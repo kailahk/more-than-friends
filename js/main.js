@@ -179,9 +179,9 @@ function renderCards() {
 
 function renderGuesses() {
   if (guessesLeft > 0) {
-    guessesLeftMsg.innerHTML = `You have ${guessesLeft} guesses left!`;
+    guessesLeftMsg.innerHTML = `${guessesLeft}`;
   } else if (guessesLeft <= 0) {
-    guessesLeftMsg.innerHTML = `You have 0 guesses left!`;
+    guessesLeftMsg.innerHTML = `0 guesses left!`;
     allCards.removeEventListener('click', handleClick);
     winner = false;
   }

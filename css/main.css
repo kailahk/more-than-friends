@@ -8,7 +8,7 @@
     margin: 5vmin 20vmin 0 0;
     align-items: flex-end;
     background-image: url('https://i.imgur.com/BXpZkoR.png');
-    background-size: 100vw 100vh;
+    background-size: 100vw;  
 }
 
 .game-body {
@@ -23,8 +23,12 @@ h1 {
     font-family: 'Playfair Display', serif;
 }
 
+#game-page-title {
+    font-family: 'Playfair Display', serif;
+}
+
 h2 {
-    font-size: 6vmin;
+    font-size: 9vmin;
     margin-top: 1vmin;
 }
 
@@ -41,15 +45,13 @@ button {
     margin-top: -1vmin
 }
 
-#cardds > div {
-    height: 14vmin;
-    width: 18vmin;
-    margin: 1vmin;
+#cards > div:hover {
+    transform: scale(1.2);
 }
 
 #cards {
     display: grid;
-    margin-top: -4vmin;
+    margin-top: -5vmin;
     grid-template-columns: repeat(6, 20vmin);
 }
 
@@ -59,11 +61,18 @@ button {
 }
 
 #guesses-left {
-    margin-bottom: 8vmin;
-    font-size: 2.5vmin;
+    font-size: 10vmin;
+    font-family: 'Roboto', sans-serif;
 }
 
 .win-lose-msg {
     display: flex;
     flex-direction: column;
+}
+
+#game-page-text {
+    width: 118vmin;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vmin;
 }
