@@ -1,6 +1,6 @@
 /*----- constants -----*/
 let backOfCard = 'https://i.imgur.com/A7MJNVp.png'
-
+let maxGuesses = 10;
 
 /*----- state variables -----*/
 let board;
@@ -69,9 +69,9 @@ function init() {
   shuffleCards(cards);
   showCards(cards);
   winner = null;
-  guessesLeft = 20;
+  guessesLeft = maxGuesses;
   turnStatus = 'off'
-  console.log(cards);
+  console.log(cards)
   render();
 }
 
@@ -86,7 +86,13 @@ function shuffleCards(deck) {
 }
 
 function showCards(deck) {
-  // flip cards for 3 seconds
+  deck.forEach(function(cell, idx) {
+    cell.flipped = true;
+    setTimeout(() => {
+      cell.flipped = false;
+      render()
+    }, 5000);
+  })
 }
 
 function handleClick(event) {
@@ -124,13 +130,18 @@ function checkMatch(currentCell) {
 }
 
 function checkWinner() {
-  if (arrOfMatches && arrOfMatches.length > 35 && guessesLeft > 0) {
+  if (arrOfMatches && arrOfMatches.length > 1 && guessesLeft > 0) {
     winner = true;
   } else if (guessesLeft <= 0) {
     winner = false
   }
   else {
     winner = null
+  }
+  if (winner === true) {
+    window.location.href = "./win.html"
+  } else if (winner === false) {
+    window.location.href = "./lose.html"
   }
 }
 

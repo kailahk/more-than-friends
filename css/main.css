@@ -57,3 +57,8 @@ button {
     margin-bottom: 8vmin;
     font-size: 2.5vmin;
 }
+
+.win-lose-msg {
+    display: flex;
+    flex-direction: column;
+}
