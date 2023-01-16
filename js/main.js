@@ -71,6 +71,7 @@ function init() {
   winner = null;
   guessesLeft = 20;
   turnStatus = 'off'
+  console.log(cards);
   render();
 }
 
@@ -85,7 +86,7 @@ function shuffleCards(deck) {
 }
 
 function showCards(deck) {
-// flip cards for 3 seconds
+  // flip cards for 3 seconds
 }
 
 function handleClick(event) {
@@ -96,28 +97,28 @@ function handleClick(event) {
   if (turnStatus === 'off') {
     currentCell.flipped = true;
     turnStatus = 'on';
-    console.log(1, currentCell)
     firstPick = currentCell;
   } else if (turnStatus === 'on') {
     turnStatus = 'off'
     firstPick.flipped = true;
     currentCell.flipped = true;
-    console.log(2, currentCell, firstPick)
     checkMatch(currentCell);
   }
   render();
 }
 
 function checkMatch(currentCell) {
-  if (firstPick.id === currentCell.id) {
+  if (firstPick.match === currentCell.id) {
     firstPick.matched = true;
     currentCell.matched = true;
+    firstPick.flipped = true;
+    currentCell.flipped = true;
     let newArr = [firstPick, currentCell];
-    arrOfMatches.unShift(newArr);
+    arrOfMatches.unshift(newArr);
     checkWinner();
   } else {
+    countToThree(currentCell, firstPick);
     guessesLeft -= 1;
-    countToThree();
     checkWinner();
   }
 }
@@ -133,8 +134,12 @@ function checkWinner() {
   }
 }
 
-function countToThree() {
-
+function countToThree(currentCell, firstPick) {
+  setTimeout(() => {
+      currentCell.flipped = false;
+      firstPick.flipped = false;
+      render()
+    }, 3000);
 }
 
 function render() {
@@ -149,17 +154,16 @@ function renderCards() {
       curCell.style.backgroundImage = `url(${card.imageUrl})`;
       curCell.style.backgroundSize = `contain`;
       curCell.style.backgroundRepeat = `no-repeat`;
-      curCell.style.height = '11vmin';
-      curCell.style.width = '15vmin';
+      curCell.style.height = '14vmin';
+      curCell.style.width = '18vmin';
     } else {
       curCell.style.backgroundImage = `url(${backOfCard})`;
       curCell.style.backgroundSize = `contain`;
       curCell.style.backgroundRepeat = `no-repeat`;
-      curCell.style.height = '11vmin';
-      curCell.style.width = '15vmin';
+      curCell.style.height = '14vmin';
+      curCell.style.width = '18vmin';
     }
   });
-  console.log(cards);
 }
 
 function renderGuesses() {

@@ -37,27 +37,23 @@ button {
 }
 
 #cardds > div {
-    border: 0.5vmin solid purple;
-    height: 11vmin;
-    width: 15vmin;
+    height: 14vmin;
+    width: 18vmin;
     margin: 1vmin;
 }
 
 #cards {
     display: grid;
     margin-top: -4vmin;
-    grid-template-columns: repeat(6, 18vmin);
-}
-
-#matches-list {
-    width: 106vmin;
-    display: flex;
+    grid-template-columns: repeat(6, 20vmin);
 }
 
 #game-page-title {
     margin-bottom: -2vmin;
+    margin-top: 0.5vmin;
 }
 
 #guesses-left {
-    margin-bottom: 5vmin;
+    margin-bottom: 8vmin;
+    font-size: 2.5vmin;
 }
