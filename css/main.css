@@ -1,0 +1,63 @@
+* {
+    text-align: center;
+}
+
+.index-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vmin;
+    align-items: center;
+}
+
+.game-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 8vmin;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 6vmin;
+    margin-top: 1vmin;
+}
+
+h5 {
+    font-size: 2vmin;
+}
+
+button {
+    border-radius: 5vmin;
+    padding: 1vmin 1.5vmin;
+    font-size: 3vmin;
+    margin-top: 3vmin
+}
+
+#cardds > div {
+    border: 0.5vmin solid purple;
+    height: 11vmin;
+    width: 15vmin;
+    margin: 1vmin;
+}
+
+#cards {
+    display: grid;
+    margin-top: -4vmin;
+    grid-template-columns: repeat(6, 18vmin);
+}
+
+#matches-list {
+    width: 106vmin;
+    display: flex;
+}
+
+#game-page-title {
+    margin-bottom: -2vmin;
+}
+
+#guesses-left {
+    margin-bottom: 5vmin;
+}
