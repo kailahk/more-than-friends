@@ -9,6 +9,8 @@
     align-items: flex-end;
     background-image: url('https://i.imgur.com/BXpZkoR.png');
     background-size: 100vw;  
+    background-repeat: no-repeat;
+    background-color: #FFD9DA;
 }
 
 .game-body {
@@ -49,10 +51,14 @@ button {
     transform: scale(1.2);
 }
 
+#cards > div {
+    filter: drop-shadow(0 0 0.35rem rgba(136, 83, 93, 0.611));
+}
+
 #cards {
     display: grid;
     margin-top: -5vmin;
-    grid-template-columns: repeat(6, 20vmin);
+    grid-template-columns: repeat(6, 21vmin);
 }
 
 #game-page-title {
@@ -71,8 +77,16 @@ button {
 }
 
 #game-page-text {
-    width: 118vmin;
+    width: 122vmin;
     display: flex;
     justify-content: space-between;
     margin-bottom: 2vmin;
+}
+
+.play-again-btn {
+    margin-top: 4vmin;
+}
+
+button:hover {
+    transform: scale(.9);
 }
