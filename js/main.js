@@ -1,8 +1,8 @@
-  /*----- constants -----*/
+/*----- constants -----*/
 let backOfCard = 'https://i.imgur.com/A7MJNVp.png'
 
 
-  /*----- state variables -----*/
+/*----- state variables -----*/
 let board;
 let guessesLeft;
 let winner;
@@ -10,61 +10,61 @@ let winner;
 // when turnStatus === 'on', the player's click will be the secon click of their currrent turn.
 let turnStatus;
 let firstPick;
-let arrOfMatches;
+let arrOfMatches = [];
 
-  /*----- cached elements  -----*/
+/*----- cached elements  -----*/
 const guessesLeftMsg = document.getElementById('guesses-left');
 const allCards = document.getElementById('cards');
 
-  /*----- event listeners -----*/
+/*----- event listeners -----*/
 allCards.addEventListener('click', handleClick);
 
-  /*----- functions -----*/
+/*----- functions -----*/
 init();
 
 function init() {
   cards = [
-   {imageUrl: '', id: 1, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 2, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 3, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 4, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 5, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 6, flipped: false, matched: false, match: 0},
-   
-   {imageUrl: '', id: 7, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 8, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 9, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 10, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 11, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 12, flipped: false, matched: false, match: 0},
-   
-   {imageUrl: '', id: 13, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 14, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 15, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 16, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 17, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 18, flipped: false, matched: false, match: 0},
-   
-   {imageUrl: '', id: 19, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 20, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 21, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 22, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 23, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 24, flipped: false, matched: false, match: 0},
-   
-   {imageUrl: '', id: 25, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 26, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 27, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 28, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 29, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 30, flipped: false, matched: false, match: 0},
-   
-   {imageUrl: '', id: 31, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 32, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 33, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 34, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 35, flipped: false, matched: false, match: 0}, 
-   {imageUrl: '', id: 36, flipped: false, matched: false, match: 0},
+    { imageUrl: 'https://i.imgur.com/HR4kTNG.png', id: 0, flipped: false, matched: false, match: 1 },
+    { imageUrl: 'https://i.imgur.com/XA7gIx1.png', id: 1, flipped: false, matched: false, match: 0 },
+    { imageUrl: 'https://i.imgur.com/dNf9bRk.png', id: 2, flipped: false, matched: false, match: 3 },
+    { imageUrl: 'https://i.imgur.com/YXKrD33.png', id: 3, flipped: false, matched: false, match: 2 },
+    { imageUrl: 'https://i.imgur.com/7pbniYx.png', id: 4, flipped: false, matched: false, match: 5 },
+    { imageUrl: 'https://i.imgur.com/QHaWW8m.png', id: 5, flipped: false, matched: false, match: 4 },
+
+    { imageUrl: 'https://i.imgur.com/Bp0hm2R.png', id: 6, flipped: false, matched: false, match: 7 },
+    { imageUrl: 'https://i.imgur.com/WYCiTFX.png', id: 7, flipped: false, matched: false, match: 6 },
+    { imageUrl: 'https://i.imgur.com/OILrHRo.png', id: 8, flipped: false, matched: false, match: 9 },
+    { imageUrl: 'https://i.imgur.com/7t7fRLK.png', id: 9, flipped: false, matched: false, match: 8 },
+    { imageUrl: 'https://i.imgur.com/NhKC7wJ.png', id: 10, flipped: false, matched: false, match: 11 },
+    { imageUrl: 'https://i.imgur.com/N6OcioZ.png', id: 11, flipped: false, matched: false, match: 10 },
+
+    { imageUrl: 'https://i.imgur.com/GqPSWRl.png', id: 12, flipped: false, matched: false, match: 13 },
+    { imageUrl: 'https://i.imgur.com/Xwp0BG7.png', id: 13, flipped: false, matched: false, match: 12 },
+    { imageUrl: 'https://i.imgur.com/TvQC4mU.png', id: 14, flipped: false, matched: false, match: 15 },
+    { imageUrl: 'https://i.imgur.com/dMF4REZ.png', id: 15, flipped: false, matched: false, match: 14 },
+    { imageUrl: 'https://i.imgur.com/Suw3lQN.png', id: 16, flipped: false, matched: false, match: 17 },
+    { imageUrl: 'https://i.imgur.com/UDbz8st.png', id: 17, flipped: false, matched: false, match: 16 },
+
+    { imageUrl: 'https://i.imgur.com/sCroF4h.png', id: 18, flipped: false, matched: false, match: 19 },
+    { imageUrl: 'https://i.imgur.com/lil7ExR.png', id: 19, flipped: false, matched: false, match: 18 },
+    { imageUrl: 'https://i.imgur.com/ubGfsHV.png', id: 20, flipped: false, matched: false, match: 21 },
+    { imageUrl: 'https://i.imgur.com/ahhKDw1.png', id: 21, flipped: false, matched: false, match: 20 },
+    { imageUrl: 'https://i.imgur.com/DT7UMOL.png', id: 22, flipped: false, matched: false, match: 23 },
+    { imageUrl: 'https://i.imgur.com/SD1d5YJ.png', id: 23, flipped: false, matched: false, match: 22 },
+
+    { imageUrl: 'https://i.imgur.com/zwWpT5D.png', id: 24, flipped: false, matched: false, match: 25 },
+    { imageUrl: 'https://i.imgur.com/bCVFS5h.png', id: 25, flipped: false, matched: false, match: 24 },
+    { imageUrl: 'https://i.imgur.com/18VQvIf.png', id: 26, flipped: false, matched: false, match: 27 },
+    { imageUrl: 'https://i.imgur.com/ntSBHNm.png', id: 27, flipped: false, matched: false, match: 26 },
+    { imageUrl: 'https://i.imgur.com/rOz6VFN.png', id: 28, flipped: false, matched: false, match: 29 },
+    { imageUrl: 'https://i.imgur.com/GHotMmJ.png', id: 29, flipped: false, matched: false, match: 28 },
+
+    { imageUrl: 'https://i.imgur.com/bPoyZN0.png', id: 30, flipped: false, matched: false, match: 31 },
+    { imageUrl: 'https://i.imgur.com/ZbibW98.png', id: 31, flipped: false, matched: false, match: 30 },
+    { imageUrl: 'https://i.imgur.com/NlxnVMs.png', id: 32, flipped: false, matched: false, match: 33 },
+    { imageUrl: 'https://i.imgur.com/n8FSArl.png', id: 33, flipped: false, matched: false, match: 32 },
+    { imageUrl: 'https://i.imgur.com/0Itot7A.png', id: 34, flipped: false, matched: false, match: 35 },
+    { imageUrl: 'https://i.imgur.com/BxbsCr3.png', id: 35, flipped: false, matched: false, match: 34 },
   ];
   shuffleCards(cards);
   showCards(cards);
@@ -85,32 +85,56 @@ function shuffleCards(deck) {
 }
 
 function showCards(deck) {
-  
+// flip cards for 3 seconds
 }
 
 function handleClick(event) {
+  let idx = event.target.id;
+  let currentCell = cards[idx];
   if (event.target.id === 'cards') return;
-  if (event.target.matched === true || event.target.flipped === true) return;
+  if (currentCell.matched === true || currentCell.flipped === true) return;
   if (turnStatus === 'off') {
-    event.target.flipped = true;
+    currentCell.flipped = true;
     turnStatus = 'on';
-    firstPick = event.target;
+    console.log(1, currentCell)
+    firstPick = currentCell;
   } else if (turnStatus === 'on') {
-    event.target.flipped = true;
     turnStatus = 'off'
-    checkMatch(event);
+    firstPick.flipped = true;
+    currentCell.flipped = true;
+    console.log(2, currentCell, firstPick)
+    checkMatch(currentCell);
+  }
+  render();
+}
+
+function checkMatch(currentCell) {
+  if (firstPick.id === currentCell.id) {
+    firstPick.matched = true;
+    currentCell.matched = true;
+    let newArr = [firstPick, currentCell];
+    arrOfMatches.unShift(newArr);
+    checkWinner();
+  } else {
+    guessesLeft -= 1;
+    countToThree();
+    checkWinner();
   }
 }
 
-function checkMatch(event) {
-  if (firstPick.id === event.target.id) {
-    firstPick.matched = true;
-    event.target.matched = true;
-    let newArr = [firstPick, event.target];
-    arrOfMatches.unShift(newArr);
-  } else {
-
+function checkWinner() {
+  if (arrOfMatches && arrOfMatches.length > 35 && guessesLeft > 0) {
+    winner = true;
+  } else if (guessesLeft <= 0) {
+    winner = false
   }
+  else {
+    winner = null
+  }
+}
+
+function countToThree() {
+
 }
 
 function render() {
@@ -119,11 +143,14 @@ function render() {
 }
 
 function renderCards() {
-  cards.forEach(function(card, idx) {
-    position = idx;
-    let curCell = document.getElementById(`${position}`);
-    if (cards[position].flipped === true || cards[position].matched === true) {
-      curCell.style.backgroundImage = `url(${cards[position].imageUrl})`;
+  cards.forEach(function (card, idx) {
+    let curCell = document.getElementById(`${idx}`);
+    if (card.matched === true || card.flipped === true) {
+      curCell.style.backgroundImage = `url(${card.imageUrl})`;
+      curCell.style.backgroundSize = `contain`;
+      curCell.style.backgroundRepeat = `no-repeat`;
+      curCell.style.height = '11vmin';
+      curCell.style.width = '15vmin';
     } else {
       curCell.style.backgroundImage = `url(${backOfCard})`;
       curCell.style.backgroundSize = `contain`;
@@ -132,6 +159,7 @@ function renderCards() {
       curCell.style.width = '15vmin';
     }
   });
+  console.log(cards);
 }
 
 function renderGuesses() {
@@ -139,6 +167,7 @@ function renderGuesses() {
     guessesLeftMsg.innerHTML = `You have ${guessesLeft} guesses left!`;
   } else if (guessesLeft <= 0) {
     guessesLeftMsg.innerHTML = `You have 0 guesses left!`;
+    allCards.removeEventListener('click', handleClick);
     winner = false;
   }
 }
