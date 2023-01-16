@@ -5,8 +5,10 @@
 .index-body {
     display: flex;
     flex-direction: column;
-    margin-top: 20vmin;
-    align-items: center;
+    margin: 5vmin 20vmin 0 0;
+    align-items: flex-end;
+    background-image: url('https://i.imgur.com/BXpZkoR.png');
+    background-size: 100vw 100vh;
 }
 
 .game-body {
@@ -16,8 +18,9 @@
 }
 
 h1 {
-    font-size: 8vmin;
+    font-size: 10vmin;
     margin-bottom: 0;
+    font-family: 'Playfair Display', serif;
 }
 
 h2 {
@@ -26,14 +29,16 @@ h2 {
 }
 
 h5 {
-    font-size: 2vmin;
+    font-size: 2.5vmin;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1vmin;
 }
 
 button {
     border-radius: 5vmin;
     padding: 1vmin 1.5vmin;
     font-size: 3vmin;
-    margin-top: 3vmin
+    margin-top: -1vmin
 }
 
 #cardds > div {

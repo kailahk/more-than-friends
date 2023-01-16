@@ -1,6 +1,6 @@
 /*----- constants -----*/
 let backOfCard = 'https://i.imgur.com/A7MJNVp.png'
-let maxGuesses = 10;
+let maxGuesses = 20;
 
 /*----- state variables -----*/
 let board;
@@ -130,7 +130,7 @@ function checkMatch(currentCell) {
 }
 
 function checkWinner() {
-  if (arrOfMatches && arrOfMatches.length > 1 && guessesLeft > 0) {
+  if (arrOfMatches && arrOfMatches.length > 35 && guessesLeft > 0) {
     winner = true;
   } else if (guessesLeft <= 0) {
     winner = false
