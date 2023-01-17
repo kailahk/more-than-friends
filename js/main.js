@@ -15,6 +15,8 @@ let arrOfMatches = [];
 /*----- cached elements  -----*/
 const guessesLeftMsg = document.getElementById('guesses-left');
 const allCards = document.getElementById('cards');
+const matchEl = document.getElementById('match-names');
+const showEl = document.getElementById('show-name');
 
 /*----- event listeners -----*/
 allCards.addEventListener('click', handleClick);
@@ -134,14 +136,19 @@ function checkMatch(currentCell, curCellEl) {
 }
 
 function showMatch(curCellEl, firstPickEl) {
+  let curCell = cards[curCellEl.id]
+  let firstPickCell = cards[firstPickEl.id]
+  matchEl.innerHTML = `${curCell.name} <br> & <br> ${firstPickCell.name}`
+  showEl.innerHTML = `${curCell.show}`
   setTimeout(() => {
     curCellEl.style.transform = `scale(1)`;
     firstPickEl.style.transform = `scale(1)`;
-  }, 2000)
+    matchEl.innerHTML = '';
+    showEl.innerHTML = '';
+  }, 3000)
 }
 
 function checkWinner() {
-  console.log(arrOfMatches)
   if (arrOfMatches && arrOfMatches.length > 17 && guessesLeft > 0) {
     winner = true;
   } else if (guessesLeft <= 0) {
@@ -161,7 +168,6 @@ function countToTwo(currentCell, firstPick, curCellEl, firstPickEl) {
   setTimeout(() => {
     currentCell.flipped = false;
     firstPick.flipped = false;
-    console.log(curCellEl, firstPickEl)
     curCellEl.style.transform = `scale(1)`;
     firstPickEl.style.transform = `scale(1)`;
     render()

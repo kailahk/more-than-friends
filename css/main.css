@@ -5,12 +5,12 @@
 .index-body {
     display: flex;
     flex-direction: column;
-    margin: 5vmin 20vmin 0 0;
+    margin: 0 20vmin 0 0;
     align-items: flex-end;
-    background-image: url('https://i.imgur.com/BXpZkoR.png');
     background-size: 100vw;  
     background-repeat: no-repeat;
-    background-color: #FFD9DA;
+    background-color: white;
+    color: #FFD9DA;
 }
 
 .game-body {
@@ -20,9 +20,11 @@
 }
 
 h1 {
-    font-size: 10vmin;
+    font-size: 15vmin;
     margin-bottom: 0;
     font-family: 'Playfair Display', serif;
+    text-align: right;
+    line-height: 15vmin;
 }
 
 #game-page-title {
@@ -34,17 +36,26 @@ h2 {
     margin-top: 1vmin;
 }
 
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4vmin;
+}
+
 h5 {
-    font-size: 2.5vmin;
+    font-size: 2.75vmin;
     font-family: 'Roboto', sans-serif;
-    margin-top: 1vmin;
+    margin-top: 2vmin;
 }
 
 button {
     border-radius: 5vmin;
     padding: 1vmin 1.5vmin;
     font-size: 3vmin;
-    margin-top: -1vmin
+    margin-top: -1vmin;
+    font-family: 'Roboto', sans-serif;
+    border: .3vmin solid rgba(113, 69, 78, 0.523);
+    color: rgba(113, 69, 78, 0.838);
+    background-color: #f8ededdc;
 }
 
 #cards > div:hover {
@@ -71,16 +82,12 @@ button {
     font-family: 'Roboto', sans-serif;
 }
 
-.win-lose-msg {
-    display: flex;
-    flex-direction: column;
-}
-
 #game-page-text {
     width: 122vmin;
     display: flex;
     justify-content: space-between;
     margin-bottom: 2vmin;
+    margin-right: 3vmin;
 }
 
 .play-again-btn {
@@ -89,4 +96,34 @@ button {
 
 button:hover {
     transform: scale(.9);
+}
+
+#match-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#match-names {
+    width: 12vmin;
+    margin-right: 8vmin;
+    margin-left: 12vmin;
+    margin-top: -10vmin;
+}
+
+#show-name {
+    width: 12vmin;
+    margin-left: 0;
+    margin-right: 20vmin;
+    margin-top: -10vmin;
+}
+
+#mtf-logo {
+    height: 30vmin;
+    margin: 5vmin 55vw 0 0;
+}
+
+#mtf-logo-win, #mtf-logo-lose {
+    height: 30vmin;
+    margin: 23vmin 55vw 0 0;
 }
