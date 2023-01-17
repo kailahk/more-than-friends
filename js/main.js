@@ -58,8 +58,8 @@ function init() {
     { imageUrl: 'https://i.imgur.com/bCVFS5h.png', id: 25, name: 'Vivian Banks', show: 'Fresh Prince of Bel Air', flipped: false, matched: false, match: 24 },
     { imageUrl: 'https://i.imgur.com/18VQvIf.png', id: 26, name: 'Eleanor Shellstrop', show: 'The Good Place', flipped: false, matched: false, match: 27 },
     { imageUrl: 'https://i.imgur.com/ntSBHNm.png', id: 27, name: 'Chidi Anagonye', show: 'The Good Place', flipped: false, matched: false, match: 26 },
-    { imageUrl: 'https://i.imgur.com/rOz6VFN.png', id: 28, name: 'Donna Pinciotti', show: 'That 70\'s Show', flipped: false, matched: false, match: 29 },
-    { imageUrl: 'https://i.imgur.com/GHotMmJ.png', id: 29, name: 'Eric Forman', show: 'That 70\'s Show', flipped: false, matched: false, match: 28 },
+    { imageUrl: 'https://i.imgur.com/rOz6VFN.png', id: 28, name: 'Donna Pinciotti', show: 'That \'70s Show', flipped: false, matched: false, match: 29 },
+    { imageUrl: 'https://i.imgur.com/GHotMmJ.png', id: 29, name: 'Eric Forman', show: 'That \'70s Show', flipped: false, matched: false, match: 28 },
 
     { imageUrl: 'https://i.imgur.com/bPoyZN0.png', id: 30, name: 'Amy Santiago', show: 'Brooklyn 99', flipped: false, matched: false, match: 31 },
     { imageUrl: 'https://i.imgur.com/ZbibW98.png', id: 31, name: 'Jake Peralta', show: 'Brooklyn 99', flipped: false, matched: false, match: 30 },
