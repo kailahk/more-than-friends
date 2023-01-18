@@ -158,9 +158,9 @@ function checkWinner() {
     winner = null
   }
   if (winner === true) {
-    window.location.href = "./win.html"
+    window.location.href = "/more-than-friends/win.html"
   } else if (winner === false) {
-    window.location.href = "./lose.html"
+    window.location.href = "/more-than-friends/lose.html"
   }
 }
 
