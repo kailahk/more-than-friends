@@ -7,7 +7,7 @@
     flex-direction: column;
     margin: 0 20vmin 0 0;
     align-items: flex-end;
-    background-size: 100vw;  
+    background-size: 100vw;
     background-repeat: no-repeat;
     background-color: white;
     color: #FFD9DA;
@@ -25,10 +25,6 @@ h1 {
     font-family: 'Playfair Display', serif;
     text-align: right;
     line-height: 15vmin;
-}
-
-#game-page-title {
-    font-family: 'Playfair Display', serif;
 }
 
 h2 {
@@ -58,11 +54,11 @@ button {
     background-color: #f8ededdc;
 }
 
-#cards > div:hover {
+#cards>div:hover {
     transform: scale(1.2);
 }
 
-#cards > div {
+#cards>div {
     filter: drop-shadow(0 0 0.35rem rgba(136, 83, 93, 0.611));
 }
 
@@ -73,8 +69,9 @@ button {
 }
 
 #game-page-title {
-    margin-bottom: -2vmin;
-    margin-top: 0.5vmin;
+    margin-bottom: -4vmin;
+    margin-top: 2vmin;
+    font-family: 'Playfair Display', serif;
 }
 
 #guesses-left {
@@ -86,8 +83,9 @@ button {
     width: 122vmin;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2vmin;
+    margin-bottom: 0.5vmin;
     margin-right: 3vmin;
+    margin-top: -2vmin;
 }
 
 .play-again-btn {
@@ -123,7 +121,34 @@ button:hover {
     margin: 5vmin 55vw 0 0;
 }
 
-#mtf-logo-win, #mtf-logo-lose {
+#mtf-logo-win,
+#mtf-logo-lose {
     height: 30vmin;
     margin: 23vmin 55vw 0 0;
+}
+
+footer {
+    background-color: #FFD9DA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-left: -2vmin;
+    padding-right: 2vmin;
+    bottom: 0;
+    width: 100%;
+}
+
+footer>a>img {
+    height: 2.5vmin;
+    width: 2.5vmin;
+    padding: 0.5vmin 1vmin 0 1vmin;
+}
+
+footer>a>img:hover {
+    transform: scale(1.1);
+}
+
+.KailahKorsh-logo {
+    filter: drop-shadow(0 0 0.35rem rgba(64, 0, 0, 0.611));
 }
