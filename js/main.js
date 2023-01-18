@@ -1,6 +1,6 @@
 /*----- constants -----*/
 let backOfCard = 'https://i.imgur.com/A7MJNVp.png'
-let maxGuesses = 20;
+let maxGuesses = 25;
 
 /*----- state variables -----*/
 let board;
