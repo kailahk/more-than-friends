@@ -70,7 +70,6 @@ function init() {
   ];
   shuffleCards(cards);
   showCards(cards);
-  console.log(cards)
   winner = null;
   guessesLeft = maxGuesses;
   turnStatus = 'off'
