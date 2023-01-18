@@ -199,10 +199,8 @@ function renderCards() {
 }
 
 function renderGuesses() {
-  if (guessesLeft > 0) {
-    guessesLeftMsg.innerHTML = `${guessesLeft}`;
-  } else if (guessesLeft <= 0) {
-    guessesLeftMsg.innerHTML = `0 guesses left!`;
+  guessesLeftMsg.innerHTML = `${guessesLeft}`
+  if (guessesLeft <= 0) {
     allCards.removeEventListener('click', handleClick);
     winner = false;
   }
